@@ -3,6 +3,7 @@ from langchain_pinecone import PineconeVectorStore
 from pinecone import Pinecone
 from utils.utils import generate_session_id
 import logging
+from core.reranker import CustomReranker
 
 logger = logging.getLogger(__name__)
 
@@ -21,7 +22,7 @@ class Retriever:
         self.session_id = session_id or generate_session_id()
         self.namespace = self.session_id
         if self.use_reranker:
-            self.reranker = self.pc.Index(self.config.PINECONE_INDEX_NAME)
+            self.reranker = CustomReranker(api_url="http://reranker:8001")
 
     def init_vectorstore(self, vectorstore: PineconeVectorStore):
         """
@@ -49,18 +50,16 @@ class Retriever:
 
         # Reranking logic
         docs_to_rerank = [doc.page_content for doc in vector_results]
-        reranked_results = self.pc.inference.rerank(
-            model="cohere-rerank-3.5",
+        reranked_results = self.reranker.rerank(
             query=query,
             documents=docs_to_rerank,
-            top_n=self.rerank_top_k,
-            return_documents=True
+            top_k=self.rerank_top_k
         )
 
         reranked_docs = []
-        for r in reranked_results.data:
+        for r in reranked_results:
             for doc in vector_results:
-                if doc.page_content == r.document.text:
+                if doc.page_content == r.text:
                     reranked_docs.append(doc)
                     break
         return reranked_docs

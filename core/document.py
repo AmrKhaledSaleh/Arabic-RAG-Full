@@ -8,6 +8,7 @@ from langchain_pinecone import PineconeEmbeddings
 from utils.utils import upload_image_to_fileio, extract_text_from_image_url, get_file_hash, generate_session_id
 import logging
 import streamlit as st
+from core.embeddings import CustomEmbeddings
 
 logger = logging.getLogger(__name__)
 
@@ -89,12 +90,10 @@ class DocumentProcessor:
         """
         Asynchronously initializes the Pinecone vector store with session namespace.
         """
+        custom_embeddings = CustomEmbeddings(api_url="http://embedding:8000")
         vectorstore = PineconeVectorStore(
             index_name=self.config.PINECONE_INDEX_NAME,
-            embedding=PineconeEmbeddings(
-                model="multilingual-e5-large",
-                pinecone_api_key=self.config.PINECONE_API_KEY
-            ),
+            embedding=custom_embeddings,
             namespace=self.namespace,
             pinecone_api_key=self.config.PINECONE_API_KEY
         )

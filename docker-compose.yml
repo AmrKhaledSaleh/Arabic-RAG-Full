@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "7860:7860"
+    environment:
+      - EMBEDDING_SERVICE_URL=http://embedding:8000
+      - RERANKER_SERVICE_URL=http://reranker:8001
+    depends_on:
+      - embedding
+      - reranker
+
+  embedding:
+    build: ./embedding_service
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./embedding_service/model_cache:/app/model_cache
+
+  reranker:
+    build: ./reranking_service
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./reranking_service/model_cache:/app/model_cache 
