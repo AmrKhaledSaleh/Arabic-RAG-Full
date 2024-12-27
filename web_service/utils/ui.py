@@ -233,7 +233,7 @@ class UIManager:
         st.markdown("""
             <div class="title-container" dir="rtl">
                 <h1 class="main-title">🌟 Arabic RAG 🌟</h1>
-                <p class="subtitle">Made with ❤️ by Hams-AI</p>
+                <p class="subtitle">Made with ❤️ by Amr Khaled</p>
             </div>
         """, unsafe_allow_html=True)
 
