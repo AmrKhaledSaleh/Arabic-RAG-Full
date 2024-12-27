@@ -201,8 +201,8 @@ I would like to express my gratitude to the following:
 For questions, suggestions, or collaborations, feel free to reach out:
 
 *   **Email:** <amrkalledsaleh1@gmail.com>
-*   **GitHub:** [Your GitHub Profile](https://github.com/AmrKhaledSaleh)
-*   **LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/amr-khaled-saleh)
+*   **GitHub:** [GitHub Profile: Amr Khaled](https://github.com/AmrKhaledSaleh)
+*   **LinkedIn:** [LinkedIn Profile: Amr Khaled](https://www.linkedin.com/in/amr-khaled-saleh)
 
 ## FAQs ❓
 
