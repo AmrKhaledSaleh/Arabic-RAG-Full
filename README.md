@@ -143,6 +143,7 @@ Here's how to use the Arabic RAG application:
 ## Features ✨
 
 *   **🎯 Arabic-Focused RAG:**  Specifically engineered to process and understand Arabic text effectively.
+*   **⚡ Lightning-Fast Responses:** Experience unparalleled speed with our RAG system. Upload your document, and within moments, engage in a seamless conversation with near-instantaneous answers, ensuring an efficient and productive interaction.
 *   **📚 Multi-Format Document Ingestion:** Supports `.txt`, `.pdf`, and image files (`.png`, `.jpg`, `.jpeg`).
 *   **✂️ Intelligent Document Chunking:**  Divides documents into semantically relevant segments.
 *   **🧠 Advanced Embeddings:**  Leverages `intfloat/multilingual-e5-small` for robust text representation.
