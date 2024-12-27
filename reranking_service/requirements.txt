@@ -1,3 +1,4 @@
+sentence-transformers==3.3.1
 langchain-community==0.3.13
 fastapi==0.115.6
 uvicorn==0.34.0
