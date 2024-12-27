@@ -48,7 +48,6 @@ This project stands out due to its specific focus on Arabic language processing,
 *   [Usage 🖥️](#usage-🖥️)
 *   [Features ✨](#features-✨)
 *   [Technologies Used 🛠️](#technologies-used-🛠️)
-*   [Contributing 🤝](#contributing-🤝)
 *   [License 📜](#license-📜)
 *   [Acknowledgments 🙏](#acknowledgments-🙏)
 *   [Contact Information 📧](#contact-information-📧)
